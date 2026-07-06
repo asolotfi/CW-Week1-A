@@ -1,5 +1,5 @@
 ﻿using System.Text;
-Console.OutputEncoding = Encoding.UTF8;
+Console.OutputEncoding = Encoding.UTF8;//خروجی‌ها را با استاندارد UTF-8 نمایش بده
 
 
 //می‌توانی از float هم استفاده کنی، اما در C# معمولاً برای محاسباتی مثل مساحت دایره از double استفاده می‌شود، چون دقت بیشتری دارد.
@@ -7,11 +7,11 @@ Console.OutputEncoding = Encoding.UTF8;
 //double pi = Math.PI;
 string sentence0 = "محاسبه مساحت دایره";
 Console.WriteLine("====================================================");
-Console.WriteLine("           🧮" + new string(sentence0.Reverse().ToArray()) + "🧮      ");
+Console.WriteLine("           🧮" + new string(sentence0.Reverse().ToArray()) + "🧮      ");//Reverse() مجموعه‌ای از کاراکترها برمی‌گرداند/.ToArray()تبدیل به آرایه/new string(...)از آن آرایه دوباره یک رشته می‌سازد.
 Console.WriteLine("====================================================");
-const double pi = 3.14;
+const double pi = 3.14;//قابل تغییر نیست
 string sentence = " لطفا شعاع دایره را وارد کنید:";
-Console.SetCursorPosition(8, Console.CursorTop);//تنظیم دقیق محل نمایش
+Console.SetCursorPosition(8, Console.CursorTop);//تنظیم دقیق محل نمایش/در همان خط فعلی بمان/پس فقط کرسر را کمی به سمت راست می‌بری / CursorTop
 Console.WriteLine(new string(sentence.Reverse().ToArray()));//نمایش درست فونت فارسی
 Console.WriteLine("");
 Console.SetCursorPosition(22, Console.CursorTop);
@@ -77,7 +77,7 @@ double sum = outPut1 + outPut2 + outPut3 + outPut4 + outPut5;
 double average = sum / 5;
 Console.ResetColor();
 Console.ForegroundColor = ConsoleColor.Yellow;
-string sentence11 = "جمع:";
+string sentence11 = "میانگین:";
 Console.WriteLine("");
 Console.SetCursorPosition(23, Console.CursorTop);
 Console.WriteLine(average + new string(sentence11.Reverse().ToArray()));
@@ -121,13 +121,13 @@ Console.ForegroundColor = ConsoleColor.Cyan;
 Console.Write(new string(sentence19.Reverse().ToArray()));
 Console.ResetColor();
 double extraHours = Convert.ToDouble(Console.ReadLine());
-double hourlyRate = 100000;
-double overtimeRate = (double)(hourlyRate * 1.5);
+const double hourlyRate = 100000;
+double overtimeRate = hourlyRate * 1.5;
 if (workingHours >= 0 && extraHours >= 0)
 {
     double baseSalary = workingHours * hourlyRate;
     double overtimeSalary = extraHours * overtimeRate;
-    double tax = (float)(baseSalary * 0.1);
+    double tax = baseSalary * 0.1;
     double totalSalary = baseSalary - tax + overtimeSalary;
     Console.WriteLine("------------------------------------------------------");
     Console.ForegroundColor = ConsoleColor.Green;
